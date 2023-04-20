@@ -8,6 +8,7 @@ export default async function handler(req, res) {
     if (!userId) {
       const response = await createGuestCart();
       console.log('Created guest cart with ID:', response);
+      console.log('check');
       const cartRef = db.collection('carts').doc(response);
       const cart = await cartRef.get();
       const cartData = cart.data();
