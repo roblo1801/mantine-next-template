@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Solar-Powered Backpack",
+    "url": "https://picsum.photos/id/0/350/200",
+    "price": 59.99,
+    "description": "A backpack equipped with a solar panel, allowing you to charge your devices on-the-go.",
+    "id": "94979aa2-3d73-4635-9c92-3bc7484e6dcc"
+  },
+  {
+    "name": "Wireless Earbuds",
+    "url": "https://picsum.photos/id/1/350/200",
+    "price": 129.99,
+    "description": "High-quality wireless earbuds with noise-cancellation and long battery life.",
+    "id": "06a84c8e-590e-4fb5-8977-68b621b8e864"
+  },
+  {
+    "name": "Smartwatch",
+    "url": "https://picsum.photos/id/2/350/200",
+    "price": 249.99,
+    "description": "A sleek smartwatch with fitness tracking, heart rate monitoring, and other advanced features.",
+    "id": "ba6f7576-a00a-4810-a685-a5dcc89eba70"
+  },
+  {
+    "name": "Virtual Reality Headset",
+    "url": "https://picsum.photos/id/3/350/200",
+    "price": 399.99,
+    "description": "Experience immersive virtual reality with this high-end headset, perfect for gaming and entertainment.",
+    "id": "ea0b3875-20da-47c5-a7e6-71ef1f9dd29f"
+  },
+  {
+    "name": "Portable Bluetooth Speaker",
+    "url": "https://picsum.photos/id/4/350/200",
+    "price": 79.99,
+    "description": "Take your music anywhere with this portable Bluetooth speaker, featuring great sound quality and long battery life.",
+    "id": "7c321aaf-6d1a-41b3-99ac-4f7a92197af7"
+  },
+  {
+    "name": "Smart Water Bottle",
+    "url": "https://picsum.photos/id/5/350/200",
+    "price": 29.99,
+    "description": "A water bottle that tracks your hydration and reminds you to drink more water throughout the day.",
+    "id": "a393baa1-c58d-4860-81ef-c3b7a7a18984"
+  },
+  {
+    "name": "Electric Skateboard",
+    "url": "https://picsum.photos/id/6/350/200",
+    "price": 899.99,
+    "description": "A high-performance electric skateboard that lets you cruise around town in style.",
+    "id": "32995baa-b0b0-4e18-9ae9-e99e3dcf5473"
+  },
+  {
+    "name": "Smart Thermostat",
+    "url": "https://picsum.photos/id/7/350/200",
+    "price": 199.99,
+    "description": "Control your home's temperature from anywhere with this smart thermostat, saving you money on your energy bill.",
+    "id": "227278c9-beec-4562-98b1-6892afe71c4d"
+  },
+  {
+    "name": "Smart Lock",
+    "url": "https://picsum.photos/id/8/350/200",
+    "price": 149.99,
+    "description": "Secure your home with this smart lock that allows you to control access to your property from your smartphone.",
+    "id": "735a7239-484e-491c-bc4e-bd35dbaf90cc"
+  },
+  {
+    "name": "Portable Espresso Maker",
+    "url": "https://picsum.photos/id/9/350/200",
+    "price": 129.99,
+    "description": "Enjoy a fresh cup of espresso anywhere with this portable, battery-powered espresso maker.",
+    "id": "9f7d4a63-498c-4649-b49f-3e2fdf1cd150"
+  },
+  {
+    "name": "Smart Jump Rope",
+    "url": "https://picsum.photos/id/10/350/200",
+    "price": 49.99,
+    "description": "A jump rope that tracks your workout data, helping you achieve your fitness goals faster.",
+    "id": "c6b7c54a-b4be-475f-acf3-75dddae324f4"
+  }
+]

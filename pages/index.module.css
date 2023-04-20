@@ -1,0 +1,28 @@
+.box{
+    border: 1px solid #EDEDED;
+    padding: 8px;
+    margin: 1px;
+}
+
+.bold{
+font-weight: bold;
+}
+
+.link{
+    text-decoration: none;
+}
+
+ /* unvisited link */
+/* .link:link {
+ 
+} */
+
+/* visited link */
+/* .link:visited {
+ 
+} */
+
+/* mouse over link */
+/* .link:hover {
+
+} */
