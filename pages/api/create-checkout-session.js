@@ -4,7 +4,18 @@ import stripeapi from 'stripe';
 const stripe = stripeapi(process.env.STRIPE_SECRET_API_KEY);
 const domain = process.env.NEXT_PUBLIC_DOMAIN;
 // const imagesDomain = process.env.NEXT_PUBLIC_IMAGES_DOMAIN;
-import { db } from './firebase';
+import admin from 'firebase-admin';
+
+// import serviceAccount from './key.json';
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
+
+if (admin.apps.length === 0) {
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+  });
+}
+
+const db = admin.firestore();
 
 export default async function handler(req, res) {
   const userId = req.cookies.userId;
