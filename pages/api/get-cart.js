@@ -5,14 +5,15 @@ export default async function handler(req, res) {
   if (req.method === 'GET') {
     const { userId } = req.cookies;
 
-    if (!userId) {
+    if (userId === undefined) {
       const response = await createGuestCart();
-      const cartRef = db.collection('carts').doc(response.toString());
+
+      const cartRef = db.collection('carts').doc(response);
       const cart = await cartRef.get();
       const cartData = cart.data();
       const cartItems = cartData.items;
 
-      res.status(200).setHeader('Set-Cookie', `userId=${response}; path=/;`).json(cartItems);
+      res.status(200).setHeader('Set-Cookie', `userId=${response}; path=/`).json(cartItems);
     }
     const cartRef = db.collection('carts').doc(userId);
     const cart = await cartRef.get();
