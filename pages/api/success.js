@@ -1,5 +1,5 @@
 import admin from 'firebase-admin';
-
+import stripeapi from 'stripe';
 // import serviceAccount from './key.json';
 const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
 
@@ -9,9 +9,8 @@ if (admin.apps.length === 0) {
   });
 }
 
-import { db } from './firebase';
+const db = admin.firestore();
 
-import stripeapi from 'stripe';
 const stripe = stripeapi(process.env.STRIPE_SECRET_API_KEY);
 
 // Handler function for the Stripe success URL
