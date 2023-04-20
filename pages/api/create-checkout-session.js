@@ -3,7 +3,7 @@ import axios from 'axios';
 import stripeapi from 'stripe';
 const stripe = stripeapi(process.env.STRIPE_SECRET_API_KEY);
 const domain = process.env.NEXT_PUBLIC_DOMAIN;
-const imagesDomain = process.env.NEXT_PUBLIC_IMAGES_DOMAIN;
+// const imagesDomain = process.env.NEXT_PUBLIC_IMAGES_DOMAIN;
 import { db } from './firebase';
 
 export default async function handler(req, res) {
