@@ -12,7 +12,7 @@ export default async function handler(req, res) {
       const cartData = cart.data();
       const cartItems = cartData.items;
 
-      res.status(200).setHeader('Set-Cookie', `userId=${response}; path=/`).json(cartItems);
+      res.status(200).setHeader('Set-Cookie', `userId=${response}; path=/;`).json(cartItems);
     }
     const cartRef = db.collection('carts').doc(userId);
     const cart = await cartRef.get();
