@@ -23,7 +23,7 @@ export default function ShoppingCart() {
   const { data: cart, error, isLoading } = useSWR('/api/get-cart', fetcher, {});
 
   if (error) {
-    return <Box>There was an error loading your cart</Box>;
+    return null;
   }
   if (isLoading) {
     return <Loader w={70} h={70} pos="fixed" right={0} top={0} />;
