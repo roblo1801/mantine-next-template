@@ -22,8 +22,37 @@ import ShoppingCart from '../components/ShoppingCart';
 import CookieBanner from '../components/CookieBanner';
 import Foot from '../components/Foot';
 
+// export async function getServerSideProps() {
+//   return {
+//     props: {},
+//   };
+// }
+
+// async function createCart() {
+//   try {
+//     fetch('/api/create-cart', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//     }).then(async (res) => {
+//       if (res.status === 200) {
+//         const userId = await res.json().then((data) => data.userId);
+//         Cookies.set('userId', userId || '');
+//       }
+//     });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// if (!Cookies.get('userId')) {
+//   createCart();
+// }
+
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
+
   const [colorScheme, setColorScheme] = useState<ColorScheme>(props.colorScheme);
 
   const toggleColorScheme = (value?: ColorScheme) => {
@@ -100,6 +129,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
 
 App.getInitialProps = async (appContext: AppContext) => {
   const appProps = await NextApp.getInitialProps(appContext);
+
   return {
     ...appProps,
     colorScheme: getCookie('mantine-color-scheme', appContext.ctx) || 'light',

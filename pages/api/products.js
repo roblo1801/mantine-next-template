@@ -13,23 +13,23 @@ const db = admin.firestore();
 
 const productsRef = db.collection('Products');
 
-const fetchProducts = async () => {
-  try {
-    const snapshot = await productsRef.get();
-    const products = [];
-    snapshot.forEach((doc) => {
-      const id = doc.id;
-      products.push({ id, ...doc.data() });
-    });
-    return products;
-  } catch (error) {
-    console.log(error);
-  }
-};
-
 // import products from './data/products.json';
 
 export default async function handler(req, res) {
+  const fetchProducts = async () => {
+    try {
+      const snapshot = await productsRef.get();
+      const products = [];
+      snapshot.forEach((doc) => {
+        const id = doc.id;
+        products.push({ id, ...doc.data() });
+      });
+      return products;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const products = await fetchProducts();
 
   res.status(200).json(products);

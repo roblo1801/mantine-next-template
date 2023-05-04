@@ -1,4 +1,4 @@
-import admin from 'firebase-admin';
+const admin = require('firebase-admin');
 
 // import serviceAccount from './key.json';
 const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
@@ -11,44 +11,30 @@ if (admin.apps.length === 0) {
 
 const db = admin.firestore();
 
-const createGuestCart = async () => {
-  try {
-    const cartRef = db.collection('carts').doc();
-    const userId = cartRef.id;
-    await cartRef.set({ items: [] });
-    console.log('Cart created successfully with UserID:', userId);
-
-    return userId;
-  } catch (error) {
-    console.error('Error creating cart:', error);
-    return null;
-  }
-};
-
 export default async function handler(req, res) {
-  // console.log('Fetching cart\n' + new Date().toLocaleString());
+  console.log('Fetching cart\n' + new Date().toLocaleString());
 
   const { userId } = req.cookies;
 
+  const createGuestCart = async () => {
+    try {
+      const cartRef = db.collection('carts').doc();
+      const userId = cartRef.id;
+      await cartRef.set({ items: [] });
+      console.log('Cart created successfully with UserID:', userId);
+
+      return userId;
+    } catch (error) {
+      console.error('Error creating cart:', error);
+      return null;
+    }
+  };
+  console.log('userId', userId);
   if (!userId) {
-    const response = await createGuestCart();
-
-    const cartRef = db.collection('carts').doc(response);
-    const cart = await cartRef.get();
-    const cartData = cart.data();
-    const cartItems = cartData.items;
-
-    res
-      .status(200)
-      .setHeader(
-        'Set-Cookie',
-        `userId=${response}; path=/; expires=${new Date(
-          Date.now() + 1000 * 60 * 60 * 24 * 7
-        ).toUTCString()}; samesite=strict; domain=${process.env.NEXT_COOKIE_DOMAIN}; ${
-          process.env.NEXT_COOKIE_DOMAIN === '192.168.1.77' ? null : 'secure'
-        };`
-      )
-      .json(cartItems);
+    const newUserId = await createGuestCart();
+    res.setHeader('Set-Cookie', `userId=${newUserId}; path=/; max-age=31536000`);
+    res.json([]);
+    return;
   }
 
   const cartRef = db.collection('carts').doc(userId);
